@@ -1,0 +1,16 @@
+{
+  "fetchedAt": "2026-08-17T00:00:00.000Z",
+  "username": "shubhum19",
+  "totalSolved": 149,
+  "totalQuestions": 4029,
+  "easySolved": 61,
+  "easyTotal": 960,
+  "mediumSolved": 75,
+  "mediumTotal": 2103,
+  "hardSolved": 13,
+  "hardTotal": 966,
+  "ranking": 1139028,
+  "acceptanceRate": 77.33,
+  "languages": ["Python3", "Java"],
+  "badges": ["50 Days Badge 2024"]
+}

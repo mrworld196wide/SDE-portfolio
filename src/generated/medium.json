@@ -1,0 +1,18 @@
+{
+  "fetchedAt": "2026-08-17T00:00:00.000Z",
+  "username": "apkc4545",
+  "articles": [
+    {
+      "title": "Beginner's Guide to Redux Toolkit: Streamline your Redux Workflow",
+      "url": "https://medium.com/@apkc4545/beginners-guide-to-redux-toolkit-streamline-your-redux-workflow",
+      "publishedAt": "2024-11-19T00:00:00.000Z",
+      "summary": "A practical walkthrough of Redux Toolkit for React developers who've felt the friction of raw Redux boilerplate — written from the other side of that friction, not as theory."
+    },
+    {
+      "title": "How to Navigate the Web Development Journey: A Comprehensive Roadmap",
+      "url": "https://medium.com/@apkc4545/how-to-navigate-the-web-development-journey-a-comprehensive-roadmap",
+      "publishedAt": "2023-07-21T00:00:00.000Z",
+      "summary": "A roadmap for people starting out in web development, written as a final-year student from a tier-3 college — the throughline being that where you start doesn't cap where you can go."
+    }
+  ]
+}

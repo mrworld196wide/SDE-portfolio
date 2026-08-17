@@ -1,0 +1,37 @@
+name: Refresh portfolio data
+
+# Runs daily at 03:00 UTC (~08:30 IST) and can be triggered manually from the
+# Actions tab. To change frequency, edit the cron expression below —
+# e.g. "0 */6 * * *" for every 6 hours, or "0 3 * * 1" for weekly on Mondays.
+on:
+  schedule:
+    - cron: "0 3 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Fetch fresh data
+        run: node scripts/fetch-data.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit updated data if changed
+        run: |
+          git config user.name "portfolio-data-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add src/generated/*.json
+          git diff --staged --quiet || git commit -m "chore: refresh portfolio data [automated]"
+          git push
