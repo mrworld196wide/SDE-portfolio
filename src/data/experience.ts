@@ -24,8 +24,8 @@ export type ExperienceEntry = {
 
 export const experience: ExperienceEntry[] = [
   {
-    id: "cloudboston",
-    company: "CloudBoston Technologies Pvt. Ltd.",
+    id: "Cloudboson",
+    company: "Cloudboson Technologies Pvt. Ltd.",
     role: "Associate Software Developer",
     location: "Noida, India",
     start: "Feb 2025",

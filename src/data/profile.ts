@@ -12,8 +12,8 @@ export const profile = {
   /** Shown under the name in the hero. Keep it factual, not "passionate developer" fluff. */
   role: "Software Engineer",
   currentTitle: "Associate Software Developer",
-  currentCompany: "CloudBoston Technologies",
-  currentCompanyShort: "CloudBoston",
+  currentCompany: "Cloudboson Technologies",
+  currentCompanyShort: "Cloudboson",
 
   location: "Delhi NCR, India",
   timezone: "Asia/Kolkata",
@@ -27,7 +27,7 @@ export const profile = {
 
   /** Short bio — hero / meta description length. */
   bioShort:
-    "I build the systems behind money moving correctly. Two years in, currently shipping subscription billing across 18+ currencies and 30+ gateways at CloudBoston — before that, breaking (and fixing) things at Dataphi Labs.",
+    "I build the systems behind money moving correctly. Two years in, currently shipping subscription billing across 18+ currencies and 30+ gateways at Cloudboson — before that, breaking (and fixing) things at Dataphi Labs.",
 
   /** Longer bio — About / footer-adjacent use. Voice: dry, direct, a little self-aware — matches the GitHub bio. */
   bioLong:
