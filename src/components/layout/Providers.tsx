@@ -1,26 +1,20 @@
 "use client";
 
-import { useEffect, useState, type ReactNode } from "react";
-import { useLenisScroll } from "@/hooks/useLenis";
-import { useReducedMotion } from "@/hooks/useReducedMotion";
+import type { ReactNode } from "react";
+import { LenisProvider } from "@/hooks/useLenis";
 import { CommandPalette } from "@/components/CommandPalette";
 import { EasterEggs } from "@/components/EasterEggs";
+import { CustomCursor } from "@/components/CustomCursor";
+import { ScrollProgress } from "@/components/ScrollProgress";
 
 export function Providers({ children }: { children: ReactNode }) {
-  const reducedMotion = useReducedMotion();
-  const [isTouch, setIsTouch] = useState(false);
-
-  useEffect(() => {
-    setIsTouch(window.matchMedia("(pointer: coarse)").matches);
-  }, []);
-
-  useLenisScroll(!reducedMotion && !isTouch);
-
   return (
-    <>
+    <LenisProvider>
+      <ScrollProgress />
+      <CustomCursor />
       {children}
       <CommandPalette />
       <EasterEggs />
-    </>
+    </LenisProvider>
   );
 }

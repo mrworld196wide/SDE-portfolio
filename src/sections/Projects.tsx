@@ -1,8 +1,8 @@
-import Image from "next/image";
 import { ArrowUpRight, FlaskConical } from "lucide-react";
 import { projects } from "@/data/projects";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
+import { ImageReveal } from "@/components/ui/ImageReveal";
 import { cn } from "@/lib/utils";
 
 export function Projects() {
@@ -75,15 +75,12 @@ export function Projects() {
 
                 <div className="space-y-5">
                   {project.image && (
-                    <div className="relative h-36 w-full overflow-hidden rounded-lg border border-ink-700 sm:h-40">
-                      <Image
-                        src={project.image}
-                        alt={`${project.name} screenshot`}
-                        fill
-                        sizes="(max-width: 768px) 100vw, 480px"
-                        className="object-cover"
-                      />
-                    </div>
+                    <ImageReveal
+                      src={project.image}
+                      alt={`${project.name} screenshot`}
+                      sizes="(max-width: 768px) 100vw, 480px"
+                      className="relative h-36 w-full overflow-hidden rounded-lg border border-ink-700 sm:h-40"
+                    />
                   )}
                   <div>
                     <p className="font-mono text-[11px] uppercase tracking-wide text-ink-400">Problem</p>

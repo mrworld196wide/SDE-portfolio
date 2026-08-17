@@ -2,6 +2,7 @@ import { Mail, Calendar, ArrowUpRight } from "lucide-react";
 import { profile } from "@/data/profile";
 import { socials } from "@/data/socials";
 import { Reveal } from "@/components/ui/Reveal";
+import { Magnetic } from "@/components/ui/Magnetic";
 
 export function Contact() {
   return (
@@ -19,22 +20,26 @@ export function Contact() {
           </p>
 
           <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
-            <a
-              href={socials.email}
-              className="inline-flex items-center gap-2 rounded-full bg-signal px-6 py-3 text-sm font-medium text-ink-950 transition-transform hover:scale-[1.03]"
-            >
-              <Mail size={16} />
-              {profile.email}
-            </a>
-            <a
-              href={socials.cal.url}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-ink-600 px-6 py-3 text-sm text-ink-100 transition-colors hover:border-ink-400"
-            >
-              <Calendar size={16} />
-              Book a short call
-            </a>
+            <Magnetic>
+              <a
+                href={socials.email}
+                className="inline-flex items-center gap-2 rounded-full bg-signal px-6 py-3 text-sm font-medium text-ink-950 transition-transform hover:scale-[1.03]"
+              >
+                <Mail size={16} />
+                {profile.email}
+              </a>
+            </Magnetic>
+            <Magnetic>
+              <a
+                href={socials.cal.url}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-ink-600 px-6 py-3 text-sm text-ink-100 transition-colors hover:border-ink-400"
+              >
+                <Calendar size={16} />
+                Book a short call
+              </a>
+            </Magnetic>
           </div>
 
           <p className="mt-8 font-mono text-xs text-ink-500">

@@ -53,6 +53,12 @@ body {
   color: rgb(var(--ink-100));
 }
 
+html.custom-cursor-active,
+html.custom-cursor-active a,
+html.custom-cursor-active button {
+  cursor: none;
+}
+
 ::selection {
   background-color: rgb(var(--signal) / 0.3);
   color: rgb(var(--ink-50));
@@ -72,6 +78,24 @@ body {
   opacity: 0.035;
   mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Circular wipe for the theme toggle, centered on the button that was
+   clicked (--vt-x / --vt-y, set in useTheme.ts). Progressive enhancement —
+   browsers without View Transitions just swap instantly. */
+::view-transition-old(root) {
+  animation: none;
+}
+::view-transition-new(root) {
+  animation: theme-wipe 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+@keyframes theme-wipe {
+  from {
+    clip-path: circle(0% at var(--vt-x, 50%) var(--vt-y, 50%));
+  }
+  to {
+    clip-path: circle(150% at var(--vt-x, 50%) var(--vt-y, 50%));
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

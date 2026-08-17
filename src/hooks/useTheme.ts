@@ -22,13 +22,37 @@ export function useTheme() {
     applyTheme(initial);
   }, []);
 
-  const toggle = useCallback(() => {
-    setTheme((prev) => {
-      const next = prev === "dark" ? "light" : "dark";
+  /**
+   * `origin` (e.g. the toggle button's screen position) drives a circular
+   * wipe via the View Transitions API where it's supported — falls back to
+   * an instant swap everywhere else (older Safari/Firefox), and is skipped
+   * entirely under prefers-reduced-motion.
+   */
+  const toggle = useCallback((origin?: { x: number; y: number }) => {
+    const next: Theme = document.documentElement.classList.contains("light") ? "dark" : "light";
+
+    const commit = () => {
       window.localStorage.setItem(STORAGE_KEY, next);
       applyTheme(next);
-      return next;
-    });
+      setTheme(next);
+    };
+
+    const supportsViewTransitions =
+      typeof document !== "undefined" &&
+      "startViewTransition" in document &&
+      !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (!supportsViewTransitions) {
+      commit();
+      return;
+    }
+
+    if (origin) {
+      document.documentElement.style.setProperty("--vt-x", `${origin.x}px`);
+      document.documentElement.style.setProperty("--vt-y", `${origin.y}px`);
+    }
+
+    document.startViewTransition(commit);
   }, []);
 
   return { theme, toggle };

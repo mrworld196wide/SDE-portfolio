@@ -49,7 +49,7 @@ export function Header() {
         <div className="flex items-center gap-3">
           <button
             type="button"
-            onClick={toggle}
+            onClick={(e) => toggle({ x: e.clientX, y: e.clientY })}
             aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
             className="grid h-8 w-8 place-items-center rounded-full border border-ink-600 text-ink-300 hover:text-ink-50 hover:border-ink-400 transition-colors"
           >

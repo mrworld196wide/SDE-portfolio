@@ -2,15 +2,23 @@
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowDown, MapPin, FileText, Github } from "lucide-react";
 import { profile } from "@/data/profile";
 import { socials } from "@/data/socials";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
+import { SplitText } from "@/components/ui/SplitText";
+import { Magnetic } from "@/components/ui/Magnetic";
 
 export function Hero() {
   const fieldRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
   const reducedMotion = useReducedMotion();
+
+  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start start", "end start"] });
+  const gridY = useTransform(scrollYProgress, [0, 1], [0, reducedMotion ? 0 : 80]);
+  const contentY = useTransform(scrollYProgress, [0, 1], [0, reducedMotion ? 0 : 40]);
+  const contentOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   useEffect(() => {
     if (reducedMotion) return;
@@ -35,7 +43,11 @@ export function Hero() {
   }, [reducedMotion]);
 
   return (
-    <section id="top" className="relative flex min-h-[100svh] items-center overflow-hidden pt-24">
+    <section
+      id="top"
+      ref={sectionRef}
+      className="relative flex min-h-[100svh] items-center overflow-hidden pt-24"
+    >
       <div
         ref={fieldRef}
         className="pointer-events-none absolute inset-0 -z-10 transition-[background] duration-300"
@@ -48,9 +60,15 @@ export function Hero() {
           } as React.CSSProperties
         }
       />
-      <div className="absolute inset-0 -z-20 bg-[linear-gradient(to_right,rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:56px_56px]" />
+      <motion.div
+        style={{ y: gridY }}
+        className="absolute inset-0 -z-20 bg-[linear-gradient(to_right,rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:56px_56px]"
+      />
 
-      <div className="mx-auto grid w-full max-w-content gap-12 px-5 sm:px-8 md:grid-cols-[1fr_auto] md:items-center">
+      <motion.div
+        style={{ y: contentY, opacity: contentOpacity }}
+        className="mx-auto grid w-full max-w-content gap-12 px-5 sm:px-8 md:grid-cols-[1fr_auto] md:items-center"
+      >
         <div>
           <motion.p
             initial={{ opacity: 0, y: 10 }}
@@ -61,14 +79,12 @@ export function Hero() {
             {profile.currentTitle} · {profile.currentCompanyShort}
           </motion.p>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.08 }}
-            className="mt-4 font-display text-5xl font-medium leading-[1.02] tracking-tight text-ink-50 sm:text-6xl md:text-7xl"
-          >
-            {profile.name}
-          </motion.h1>
+          <SplitText
+            as="h1"
+            text={profile.name}
+            delay={0.15}
+            className="mt-4 block font-display text-5xl font-medium leading-[1.02] tracking-tight text-ink-50 sm:text-6xl md:text-7xl"
+          />
 
           <motion.p
             initial={{ opacity: 0, y: 16 }}
@@ -95,24 +111,28 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.32 }}
             className="mt-9 flex flex-wrap items-center gap-3"
           >
-            <a
-              href={profile.resumeUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-signal px-5 py-2.5 text-sm font-medium text-ink-950 transition-transform hover:scale-[1.03]"
-            >
-              <FileText size={15} />
-              View Resume
-            </a>
-            <a
-              href={socials.github.url}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-ink-600 px-5 py-2.5 text-sm text-ink-100 transition-colors hover:border-ink-400"
-            >
-              <Github size={15} />
-              GitHub
-            </a>
+            <Magnetic>
+              <a
+                href={profile.resumeUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-signal px-5 py-2.5 text-sm font-medium text-ink-950 transition-transform hover:scale-[1.03]"
+              >
+                <FileText size={15} />
+                View Resume
+              </a>
+            </Magnetic>
+            <Magnetic>
+              <a
+                href={socials.github.url}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-ink-600 px-5 py-2.5 text-sm text-ink-100 transition-colors hover:border-ink-400"
+              >
+                <Github size={15} />
+                GitHub
+              </a>
+            </Magnetic>
             <a
               href="#contact"
               className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm text-ink-300 transition-colors hover:text-ink-50"
@@ -138,7 +158,7 @@ export function Hero() {
             className="rounded-2xl object-cover grayscale-[15%]"
           />
         </motion.div>
-      </div>
+      </motion.div>
 
       <motion.a
         href="#timeline"
