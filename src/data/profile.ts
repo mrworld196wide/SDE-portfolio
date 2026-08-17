@@ -37,7 +37,6 @@ export const profile = {
   now: "Currently deepening system design and distributed-systems fundamentals — the stuff that shows up the moment a payments platform has to scale past 'it works on one instance.'",
 
   email: "aishwarthisside@gmail.com",
-  phone: "+91-8433181050",
 
   /**
    * Google Drive is the primary resume link on purpose: swapping the file in
