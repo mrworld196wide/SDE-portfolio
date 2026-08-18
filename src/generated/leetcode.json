@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-17T00:00:00.000Z",
+  "fetchedAt": "2026-08-18T03:49:21.489Z",
   "username": "shubhum19",
   "totalSolved": 149,
   "totalQuestions": 4029,
@@ -10,7 +10,14 @@
   "hardSolved": 13,
   "hardTotal": 966,
   "ranking": 1139028,
-  "acceptanceRate": 77.33,
-  "languages": ["Python3", "Java"],
-  "badges": ["50 Days Badge 2024"]
+  "languages": [
+    "Python3",
+    "Java",
+    "Python",
+    "MySQL",
+    "C++"
+  ],
+  "badges": [
+    "50 Days Badge 2024"
+  ]
 }
