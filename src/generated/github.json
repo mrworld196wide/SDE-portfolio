@@ -1,11 +1,11 @@
 {
-  "fetchedAt": "2026-08-22T03:46:23.448Z",
+  "fetchedAt": "2026-08-23T03:54:18.911Z",
   "profile": {
     "login": "mrworld196wide",
     "bio": "Self-proclaimed \"smart working\" passionate coder (emphasis on the \"smart working\" part). ",
     "location": "Delhi",
     "followers": 23,
-    "following": 39,
+    "following": 33,
     "publicRepos": 38,
     "createdAt": "2020-10-05T08:49:22Z"
   },
@@ -49,12 +49,22 @@
   ],
   "repos": [
     {
+      "name": "mrworld196wide",
+      "description": "Config files for my GitHub profile.",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "updatedAt": "2026-08-22T13:24:02Z",
+      "url": "https://github.com/mrworld196wide/mrworld196wide",
+      "fork": false
+    },
+    {
       "name": "SDE-portfolio",
       "description": null,
       "language": "TypeScript",
       "stars": 0,
       "forks": 0,
-      "updatedAt": "2026-08-21T03:54:05Z",
+      "updatedAt": "2026-08-22T03:46:47Z",
       "url": "https://github.com/mrworld196wide/SDE-portfolio",
       "fork": false
     },
@@ -66,16 +76,6 @@
       "forks": 0,
       "updatedAt": "2026-05-05T19:00:37Z",
       "url": "https://github.com/mrworld196wide/OrderMatchingEngine",
-      "fork": false
-    },
-    {
-      "name": "mrworld196wide",
-      "description": "Config files for my GitHub profile.",
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "updatedAt": "2026-02-20T22:05:25Z",
-      "url": "https://github.com/mrworld196wide/mrworld196wide",
       "fork": false
     },
     {
