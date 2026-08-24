@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-23T03:54:18.911Z",
+  "fetchedAt": "2026-08-24T03:57:56.615Z",
   "profile": {
     "login": "mrworld196wide",
     "bio": "Self-proclaimed \"smart working\" passionate coder (emphasis on the \"smart working\" part). ",
@@ -49,6 +49,16 @@
   ],
   "repos": [
     {
+      "name": "SDE-portfolio",
+      "description": null,
+      "language": "TypeScript",
+      "stars": 0,
+      "forks": 0,
+      "updatedAt": "2026-08-23T03:54:44Z",
+      "url": "https://github.com/mrworld196wide/SDE-portfolio",
+      "fork": false
+    },
+    {
       "name": "mrworld196wide",
       "description": "Config files for my GitHub profile.",
       "language": null,
@@ -56,16 +66,6 @@
       "forks": 0,
       "updatedAt": "2026-08-22T13:24:02Z",
       "url": "https://github.com/mrworld196wide/mrworld196wide",
-      "fork": false
-    },
-    {
-      "name": "SDE-portfolio",
-      "description": null,
-      "language": "TypeScript",
-      "stars": 0,
-      "forks": 0,
-      "updatedAt": "2026-08-22T03:46:47Z",
-      "url": "https://github.com/mrworld196wide/SDE-portfolio",
       "fork": false
     },
     {
