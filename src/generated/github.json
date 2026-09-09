@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-08T07:56:35.760Z",
+  "fetchedAt": "2026-09-09T07:59:18.153Z",
   "profile": {
     "login": "mrworld196wide",
     "bio": "Self-proclaimed \"smart working\" passionate coder (emphasis on the \"smart working\" part). ",
@@ -49,6 +49,16 @@
   ],
   "repos": [
     {
+      "name": "SDE-portfolio",
+      "description": null,
+      "language": "TypeScript",
+      "stars": 0,
+      "forks": 0,
+      "updatedAt": "2026-09-08T07:57:25Z",
+      "url": "https://github.com/mrworld196wide/SDE-portfolio",
+      "fork": false
+    },
+    {
       "name": "DevBoard.Backend",
       "description": null,
       "language": "C#",
@@ -56,16 +66,6 @@
       "forks": 0,
       "updatedAt": "2026-09-07T18:23:34Z",
       "url": "https://github.com/mrworld196wide/DevBoard.Backend",
-      "fork": false
-    },
-    {
-      "name": "SDE-portfolio",
-      "description": null,
-      "language": "TypeScript",
-      "stars": 0,
-      "forks": 0,
-      "updatedAt": "2026-09-07T08:06:36Z",
-      "url": "https://github.com/mrworld196wide/SDE-portfolio",
       "fork": false
     },
     {
