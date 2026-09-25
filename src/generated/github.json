@@ -1,10 +1,10 @@
 {
-  "fetchedAt": "2026-09-24T08:17:28.057Z",
+  "fetchedAt": "2026-09-25T08:40:00.518Z",
   "profile": {
     "login": "mrworld196wide",
     "bio": "Self-proclaimed \"smart working\" passionate coder (emphasis on the \"smart working\" part). ",
     "location": "Delhi",
-    "followers": 23,
+    "followers": 22,
     "following": 33,
     "publicRepos": 39,
     "createdAt": "2020-10-05T08:49:22Z"
@@ -54,7 +54,7 @@
       "language": "TypeScript",
       "stars": 0,
       "forks": 0,
-      "updatedAt": "2026-09-23T08:25:17Z",
+      "updatedAt": "2026-09-24T08:17:33Z",
       "url": "https://github.com/mrworld196wide/SDE-portfolio",
       "fork": false
     },
